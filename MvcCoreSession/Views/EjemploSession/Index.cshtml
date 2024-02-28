@@ -1,0 +1,56 @@
+﻿
+﻿<h1>Ejemplos Session</h1>
+
+@{
+    Mascota mascota =
+                Context.Session.GetObject<Mascota>("MASCOTAOBJECT");
+}
+
+@if (mascota != null)
+{
+    <h3>@mascota.Nombre , @mascota.Raza , @mascota.Edad </h3>
+}
+
+<h3 style="color:blue">
+    @ViewData["NUMERO"]
+</h3>
+
+<h2 style="color:fuchsia">
+    @Context.Session.GetString("nombre")
+</h2>
+<h2 style="color:green">
+    @Context.Session.GetString("hora")
+</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionSimple">
+            Session Simple
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionMascota">
+            Session Binary Object
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionCollection">
+            Session Binary Collection
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionMascotaJson">
+            Session JSON Mascota
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionMascotaObject">
+            Session JSON Mascota OBJETO
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession" asp-action="SessionCollectionObject">
+            Session JSON Collection OBJETO
+        </a>
+    </li>
+</ul>
